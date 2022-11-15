@@ -9,7 +9,7 @@ class locker {
 public:
     locker() {
         if (pthread_mutex_init(&m_mutex, NULL) != 0) {
-            std::cout << "pthread_mutex_init() fail..." << std::endl;
+            std::cout << "pthread_mutex_init() error..." << std::endl;
             exit(-1);
         }
     }
