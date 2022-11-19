@@ -13,6 +13,9 @@ public:
         if (sockfd == -1) {
             errmsg("socket()");
         }
+
+        int option = true;
+        setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (void *)&option, sizeof(option));
     }
     ~tcpsock() {
 

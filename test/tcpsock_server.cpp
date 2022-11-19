@@ -21,6 +21,10 @@ int main() {
     inet_ntop(AF_INET, &clnt_addr.sin_addr.s_addr, s, 120);
     std::cout << "client addr: " << s << std::endl;
 
+    write(clnt_sock, "server ok...", 13);
+
+    while(1);
+
     close(clnt_sock);
     close(server);
     return 0;
